@@ -39,14 +39,34 @@ module.exports = function(eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
-  // Layout alias
+  eleventyConfig.addCollection("pages", function(collection) {
+    // Get all pages with layout: layouts/page.njk or in pages directory
+    return collection.getFilteredByGlob([
+      "src/index.njk", 
+      "src/bio.njk", 
+      "src/contact.njk",
+      "src/resume.njk",
+      "src/shop.njk"
+    ]).map(item => {
+      // Set default layout for pages if not specified
+      if (!item.data.layout) {
+        item.data.layout = "layouts/base.njk";
+      }
+      return item;
+    });
+  });
+
+
   eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
+  eleventyConfig.addLayoutAlias('page', 'layouts/base.njk');
+  eleventyConfig.addLayoutAlias('project', 'layouts/project.njk');
+
   
   return {
     dir: {
       input: "src",
       includes: "_includes",
-      layouts: "_includes", // Update this path if layouts are directly in _includes
+      layouts: "_includes",
       output: "_site"
     },
     templateFormats: ["md", "njk", "html"],
