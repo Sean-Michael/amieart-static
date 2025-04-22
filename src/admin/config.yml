@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
-  branch: main # Branch to update (optional; defaults to master)
+  name: github
+  repo: Sean-Michael/amieart-static # Replace with your actual GitHub repository
+  branch: main
+  auth_endpoint: api/auth # Used for Auth0 authentication
 
 media_folder: "src/images/uploads" # Media files will be stored in the repo under this path
 public_folder: "/images/uploads" # The src attribute for uploaded media

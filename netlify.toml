@@ -1,11 +1,17 @@
 [build]
   publish = "_site"
   command = "npm run build"
+  functions = "netlify/functions"
 
 [dev]
   command = "npm run start"
   publish = "_site"
   port = 8080
+  
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
   
 [[redirects]]
   from = "/admin/*"
