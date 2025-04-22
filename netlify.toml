@@ -1,0 +1,13 @@
+[build]
+  publish = "_site"
+  command = "npm run build"
+
+[dev]
+  command = "npm run start"
+  publish = "_site"
+  port = 8080
+  
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
