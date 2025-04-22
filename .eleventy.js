@@ -29,6 +29,13 @@ module.exports = function(eleventyConfig) {
   // Collections
   eleventyConfig.addCollection("projects", function(collection) {
     return collection.getFilteredByGlob("src/_projects/**/*.md")
+      .map(item => {
+        // Add default layout if not specified
+        if (!item.data.layout) {
+          item.data.layout = "layouts/project.njk";
+        }
+        return item;
+      })
       .sort((a, b) => b.date - a.date);
   });
 
