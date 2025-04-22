@@ -658,6 +658,89 @@ footer {
     font-size: 14px;
 }
 
+/* Project Detail Page */
+.project-detail {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.project-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.project-header h1 {
+    font-size: 36px;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: var(--heading-color);
+}
+
+.project-category {
+    font-size: 18px;
+    color: var(--secondary-text);
+    margin-bottom: 5px;
+}
+
+.project-date {
+    font-size: 16px;
+    color: var(--footer-text);
+}
+
+.project-image {
+    margin-bottom: 40px;
+}
+
+.project-image img {
+    width: 100%;
+    max-height: 600px;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px var(--card-shadow);
+}
+
+.project-content {
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+.project-content h2,
+.project-content h3 {
+    margin: 25px 0 15px;
+    color: var(--heading-color);
+}
+
+.project-content p {
+    margin-bottom: 20px;
+}
+
+.project-content img {
+    max-width: 100%;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+
+.project-footer {
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: var(--text-color);
+    background-color: var(--toggle-bg);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: var(--toggle-hover);
+    color: var(--link-hover-color);
+}
+
 /* Responsive */
 @media screen and (max-width: 768px) {
     .site-header {

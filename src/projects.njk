@@ -1,6 +1,7 @@
 ---
 layout: layouts/base.njk
 title: Projects
+permalink: /projects/
 ---
 
 <div class="container">
@@ -11,6 +12,18 @@ title: Projects
     
     <section class="featured-work">
         <div class="work-grid">
+            {%- for project in collections.projects -%}
+            <a href="{{ project.url }}" class="work-item">
+                <img src="{{ project.data.image }}" alt="{{ project.data.title }}" class="work-image">
+                <div class="work-overlay">
+                    <h3 class="work-title">{{ project.data.title }}</h3>
+                    <p class="work-category">{{ project.data.category }}</p>
+                </div>
+            </a>
+            {%- endfor -%}
+            
+            {% if collections.projects.length === 0 %}
+            <!-- Placeholder items when no projects exist yet -->
             <div class="work-item">
                 <img src="/api/placeholder/400/400" alt="Project 1" class="work-image">
                 <div class="work-overlay">
@@ -32,27 +45,7 @@ title: Projects
                     <p class="work-category">Mixed Media</p>
                 </div>
             </div>
-            <div class="work-item">
-                <img src="/api/placeholder/400/400" alt="Project 4" class="work-image">
-                <div class="work-overlay">
-                    <h3 class="work-title">Project Title 4</h3>
-                    <p class="work-category">Digital Art</p>
-                </div>
-            </div>
-            <div class="work-item">
-                <img src="/api/placeholder/400/400" alt="Project 5" class="work-image">
-                <div class="work-overlay">
-                    <h3 class="work-title">Project Title 5</h3>
-                    <p class="work-category">Sculpture</p>
-                </div>
-            </div>
-            <div class="work-item">
-                <img src="/api/placeholder/400/400" alt="Project 6" class="work-image">
-                <div class="work-overlay">
-                    <h3 class="work-title">Project Title 6</h3>
-                    <p class="work-category">Photography</p>
-                </div>
-            </div>
+            {% endif %}
         </div>
     </section>
 </div>

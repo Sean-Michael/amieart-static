@@ -1,0 +1,102 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+media_folder: "src/images/uploads" # Media files will be stored in the repo under this path
+public_folder: "/images/uploads" # The src attribute for uploaded media
+
+collections:
+  - name: "projects"
+    label: "Projects"
+    folder: "src/_projects"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Featured Image", name: "image", widget: "image" }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/index.njk"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Heading", name: "heroHeading", widget: "string" }
+          - { label: "Hero Text", name: "heroText", widget: "text" }
+          - { label: "Featured Work Heading", name: "workHeading", widget: "string" }
+          
+      - file: "src/bio.njk"
+        label: "Bio Page"
+        name: "bio"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Bio Image", name: "bioImage", widget: "image" }
+          - { label: "Bio Text", name: "bioContent", widget: "markdown" }
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Stat Title", name: "title", widget: "string" }
+              - { label: "Stat Text", name: "text", widget: "text" }
+          - label: "Education"
+            name: "education"
+            widget: "list"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Degree/Course", name: "title", widget: "string" }
+              - { label: "Institution", name: "institution", widget: "string" }
+          - label: "Experience"
+            name: "experience"
+            widget: "list"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Role", name: "title", widget: "string" }
+              - { label: "Company", name: "company", widget: "string" }
+          - label: "Exhibitions"
+            name: "exhibitions"
+            widget: "list"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Exhibition Title", name: "title", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+          - { label: "Artist Statement", name: "statement", widget: "markdown" }
+              
+      - file: "src/resume.njk"
+        label: "Resume Page"
+        name: "resume"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Resume Content", name: "content", widget: "markdown" }
+          - { label: "Resume PDF", name: "resumePDF", widget: "file", required: false }
+          
+      - file: "src/contact.njk"
+        label: "Contact Page"
+        name: "contact"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Contact Text", name: "contactText", widget: "text" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
+          - label: "Social Media"
+            name: "socialMedia"
+            widget: "list"
+            fields:
+              - { label: "Platform", name: "platform", widget: "string" }
+              - { label: "URL", name: "url", widget: "string" }
+              
+      - file: "src/shop.njk"
+        label: "Shop Page"
+        name: "shop"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Shop Image", name: "shopImage", widget: "image" }
+          - { label: "Shop Heading", name: "shopHeading", widget: "string" }
+          - { label: "Shop Text", name: "shopText", widget: "markdown" }
+          - { label: "Shop URL", name: "shopUrl", widget: "string" }

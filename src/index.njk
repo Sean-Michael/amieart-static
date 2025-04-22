@@ -1,6 +1,9 @@
 ---
 layout: layouts/base.njk
 title: Home
+heroHeading: Amie Holstein
+heroText: Artistic Journey
+workHeading: Featured Projects
 eleventyNavigation:
   key: Home
   order: 1
@@ -8,14 +11,26 @@ eleventyNavigation:
 
 <div class="container">
     <section class="hero">
-        <h1>Amie Holstein</h1>
-        <p>Artistic Journey</p>
+        <h1>{{ heroHeading }}</h1>
+        <p>{{ heroText }}</p>
         <a href="/projects/" class="button">View Work</a>
     </section>
     
     <section class="featured-work">
-        <h2 class="section-title">Featured Projects</h2>
+        <h2 class="section-title">{{ workHeading }}</h2>
         <div class="work-grid">
+            {%- for project in collections.projects | limit(3) -%}
+            <a href="{{ project.url }}" class="work-item">
+                <img src="{{ project.data.image }}" alt="{{ project.data.title }}" class="work-image">
+                <div class="work-overlay">
+                    <h3 class="work-title">{{ project.data.title }}</h3>
+                    <p class="work-category">{{ project.data.category }}</p>
+                </div>
+            </a>
+            {%- endfor -%}
+            
+            {% if collections.projects.length === 0 %}
+            <!-- Placeholder items when no projects exist yet -->
             <div class="work-item">
                 <img src="/api/placeholder/400/400" alt="Project 1" class="work-image">
                 <div class="work-overlay">
@@ -37,6 +52,7 @@ eleventyNavigation:
                     <p class="work-category">Mixed Media</p>
                 </div>
             </div>
+            {% endif %}
         </div>
     </section>
 </div>

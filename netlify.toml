@@ -8,6 +8,15 @@
   port = 8080
   
 [[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+  
+[[redirects]]
   from = "/*"
   to = "/404.html"
   status = 404
+
+# Enable Netlify Identity for authentication
+[template.environment]
+  NETLIFY_IDENTITY_ENABLED = "true"
