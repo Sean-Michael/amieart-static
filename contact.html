@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amie - Contact</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #555;
+            transition: color 0.3s ease;
+        }
+        
+        a:hover {
+            color: #000;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            padding: 30px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .site-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            color: #000;
+        }
+        
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 30px;
+        }
+        
+        nav a {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        nav a.active {
+            font-weight: bold;
+            color: #000;
+        }
+        
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+        
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .page-header h1 {
+            font-size: 42px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+        
+        .page-header p {
+            font-size: 18px;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        /* Contact Form */
+        .contact-form h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            margin-bottom: 25px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 16px;
+            color: #555;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: #000;
+            outline: none;
+        }
+        
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background: #333;
+        }
+        
+        /* Contact Info */
+        .contact-info h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+        
+        .info-group {
+            margin-bottom: 25px;
+        }
+        
+        .info-group h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #000;
+        }
+        
+        .info-group p {
+            color: #666;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .contact-social {
+            margin-top: 40px;
+        }
+        
+        .contact-social h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #000;
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        
+        .social-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+        
+        .social-item:hover {
+            background: #eee;
+        }
+        
+        .social-item svg {
+            margin-right: 10px;
+        }
+        
+        /* Map Section */
+        .map-section {
+            margin-bottom: 60px;
+        }
+        
+        .map-section h2 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .map-container {
+            height: 400px;
+            background: #f5f5f5;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 18px;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 60px 0;
+            border-top: 1px solid #eee;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-info {
+            flex: 1;
+            min-width: 300px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-info h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        
+        .footer-info p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            margin-right: 10px;
+            transition: background 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background: #eee;
+        }
+        
+        .copyright {
+            width: 100%;
+            text-align: center;
+            margin-top: 40px;
+            color: #888;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media screen and (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 20px;
+            }
+            
+            nav li {
+                margin: 0 15px;
+            }
+            
+            .contact-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .contact-info {
+                order: -1;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            nav li {
+                margin: 10px 15px;
+            }
+            
+            .page-header h1 {
+                font-size: 32px;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container site-header">
+            <div class="logo">
+                <a href="index.html">AMIE</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="bio.html">Bio</a></li>
+                    <li><a href="resume.html">Resume</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <section class="page-header">
+                <h1>Get In Touch</h1>
+                <p>I'm always interested in new projects, collaborations, and opportunities to share my work. Feel free to reach out!</p>
+            </section>
+            
+            <section class="contact-section">
+                <div class="contact-form">
+                    <h2>Send a Message</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <h2>Contact Information</h2>
+                    
+                    <div class="info-group">
+                        <h3>Email</h3>
+                        <p>info@amie-artist.com</p>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h3>Studio Address</h3>
+                        <p>123 Artist Lane<br>Studio #456<br>San Francisco, CA 94110</p>
+                    </div>
+                    
+                    <div class="info-group">
+                        <h3>Studio Hours</h3>
+                        <p>Monday - Friday: 10am - 6pm<br>Weekends: By appointment only</p>
+                    </div>
+                    
+                    <div class="contact-social">
+                        <h3>Connect on Social Media</h3>
+                        <div class="social-grid">
+                            <a href="#" class="social-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                                Instagram
+                            </a>
+                            <a href="#" class="social-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4c-1 .5-2.16.84-3.38 1.02C17.45 4.39 16.26 4 15 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C7.37 9.08 4.47 7.47 2.53 4.95c-.38.66-.6 1.43-.6 2.25 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"></path></svg>
+                                Twitter
+                            </a>
+                            <a href="#" class="social-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                    <rect x="2" y="9" width="4" height="12"></rect>
+                                    <circle cx="4" cy="4" r="2"></circle>
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-info">
+                <h3>About Amie</h3>
+                <p>Amie is a passionate artist creating unique and inspiring works. Follow along for updates and new projects.</p>
+            </div>
+            <div class="social-links">
+                <a href="#" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 4c-1 .5-2.16.84-3.38 1.02C17.45 4.39 16.26 4 15 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C7.37 9.08 4.47 7.47 2.53 4.95c-.38.66-.6 1.43-.6 2.25 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Amie. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
