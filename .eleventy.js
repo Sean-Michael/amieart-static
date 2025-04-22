@@ -13,20 +13,27 @@ module.exports = function(eleventyConfig) {
       day: 'numeric'
     });
   });
+
+  // Add a custom 'limit' filter
+  eleventyConfig.addFilter("limit", function(array, limit) {
+    return array.slice(0, limit);
+  });
   
   // Collections
   eleventyConfig.addCollection("projects", function(collection) {
     return collection.getFilteredByGlob("src/_projects/**/*.md")
       .sort((a, b) => b.date - a.date);
   });
+
+  // Layout alias
+  eleventyConfig.addLayoutAlias('base', 'layouts/base.njk');
   
   return {
     dir: {
       input: "src",
-      output: "_site",
-      includes: "../_includes",
-      layouts: "../_includes/layouts",  
-      data: "../_data"
+      includes: "_includes",
+      layouts: "_includes", // Update this path if layouts are directly in _includes
+      output: "_site"
     },
     templateFormats: ["md", "njk", "html"],
     markdownTemplateEngine: "njk",
