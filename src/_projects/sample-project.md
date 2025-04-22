@@ -1,8 +1,8 @@
 ---
 title: Sample Art Project
 description: A demonstration of how projects will display in the portfolio
-image: /api/placeholder/800/600
-category: Mixed Media
+image: /images/uploads/r1-01249-005a.jpg
+category: Oil Painting
 date: 2025-04-15
 layout: layouts/project.njk
 ---
