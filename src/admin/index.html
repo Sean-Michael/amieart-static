@@ -3,63 +3,22 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content Manager</title>
-    <!-- Auth0 SDK -->
-    <script src="https://cdn.auth0.com/js/auth0/9.16.0/auth0.min.js"></script>
+    <title>Content Manager | Amie Artist</title>
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
-    <!-- Include the script that builds the page and powers Netlify CMS -->
-    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <!-- Netlify CMS -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     
-    <!-- Auth0 Configuration for Netlify CMS -->
     <script>
-      window.netlifyIdentity = {
-        on: function(event, callback) {
-          if (event === 'init') {
-            // Simulate Netlify Identity for compatibility
-            callback(null);
-          }
-          if (event === 'login') {
-            // Will be handled by Auth0
-          }
-        }
-      };
-
-      // Auth0 integration
-      const auth0 = new auth0.WebAuth({
-        domain: 'YOUR_AUTH0_DOMAIN',  // Replace with your Auth0 domain
-        clientID: 'YOUR_AUTH0_CLIENT_ID',  // Replace with your Auth0 client ID
-        redirectUri: `${window.location.origin}/admin/callback`,
-        responseType: 'token id_token',
-        scope: 'openid profile email'
-      });
-
-      // Configure Netlify CMS to use Auth0
-      window.netlifyAuth = {
-        login: function() {
-          auth0.authorize();
-        },
-        logout: function() {
-          // Clear token and redirect to admin
-          localStorage.removeItem('nf-session');
-          window.location.href = '/admin/';
-        },
-        getToken: function() {
-          return localStorage.getItem('nf-session');
-        }
-      };
-
-      // Check for Auth0 callback
-      if (window.location.hash.indexOf('#access_token=') > -1) {
-        auth0.parseHash((err, authResult) => {
-          if (authResult && authResult.accessToken && authResult.idToken) {
-            // Store the token in localStorage for persistence
-            localStorage.setItem('nf-session', authResult.idToken);
-            // Clean URL and redirect to admin
-            window.location.href = '/admin/';
-          } else if (err) {
-            console.error('Error during Auth0 authentication:', err);
-            alert('Error during authentication. Please try again.');
+      // Check if user is logged in and redirect if needed
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
           }
         });
       }

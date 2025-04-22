@@ -14,9 +14,5 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"
-  },
-  "dependencies": {
-    "jsonwebtoken": "^9.0.0",
-    "node-fetch": "^2.6.9"
   }
 }

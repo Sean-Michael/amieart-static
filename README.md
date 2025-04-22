@@ -1,47 +1,12 @@
 # Amie Art Portfolio Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f8d5e39e-a38b-44a8-bf4c-c9d884578e15/deploy-status)](https://app.netlify.com/sites/amieart/deploys)
+
 This is a static portfolio site built with Eleventy and Netlify CMS for easy content management. The site includes dark mode support and uses Auth0 for authentication.
 
 ## Description
 
 A static website showcasing Amie's artwork, exhibitions, and professional background. The site serves as a portfolio and point of contact for art collectors, galleries, and fans.
-
-## Authentication Setup
-
-This site uses Auth0 for secure authentication to the admin interface. Follow these steps to set up Auth0:
-
-### 1. Create an Auth0 Application
-
-1. Sign up for an [Auth0 account](https://auth0.com/) if you don't have one
-2. Create a new Application in the Auth0 dashboard
-3. Choose "Regular Web Application" as the application type
-4. In Settings, configure the following:
-   - **Allowed Callback URLs**: `https://your-site-url.netlify.app/admin/callback`
-   - **Allowed Logout URLs**: `https://your-site-url.netlify.app/admin`
-   - **Allowed Web Origins**: `https://your-site-url.netlify.app`
-   - Replace `your-site-url.netlify.app` with your actual Netlify domain
-
-### 2. Configure Environment Variables in Netlify
-
-In your Netlify site dashboard, go to Site Settings > Build & Deploy > Environment:
-
-Add the following environment variables:
-```
-AUTH0_DOMAIN=your-auth0-domain.auth0.com
-AUTH0_CLIENT_ID=your-auth0-client-id
-AUTH0_CLIENT_SECRET=your-auth0-client-secret
-GITHUB_ACCESS_TOKEN=your-github-personal-access-token
-```
-
-- The Auth0 values come from your Auth0 application settings
-- For the GitHub token, create a [Personal Access Token](https://github.com/settings/tokens) with `repo` scope
-
-### 3. Configure GitHub Repository
-
-1. Update the `repo` field in `src/admin/config.yml` to match your GitHub repository:
-   ```
-   repo: your-github-username/amieart-static
-   ```
 
 ## Installation
 

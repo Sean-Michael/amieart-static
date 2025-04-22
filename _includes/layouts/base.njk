@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - Amie</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
     {% include "partials/header.njk" %}
@@ -16,5 +18,20 @@
     {% include "partials/footer.njk" %}
     
     <script src="/js/darkmode.js"></script>
+    <script>
+      // Check if user is logged in
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            // If not on the admin page and user clicks login, redirect to admin
+            window.netlifyIdentity.on("login", () => {
+              if (window.location.pathname !== "/admin/") {
+                document.location.href = "/admin/";
+              }
+            });
+          }
+        });
+      }
+    </script>
 </body>
 </html>
