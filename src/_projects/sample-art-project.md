@@ -1,5 +1,5 @@
 ---
-title: Sample Art Project
+title: Coffee Shop Drawings
 description: "blah blah blah "
 image: /images/uploads/r1-00727-002a.jpg
 category: Drawing Marker
