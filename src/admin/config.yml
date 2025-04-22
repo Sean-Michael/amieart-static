@@ -1,13 +1,9 @@
 backend:
   name: git-gateway
-  branch: main # Branch to update
+  branch: main
 
-# Enable editorial workflow for content review before publishing
-publish_mode: editorial_workflow
-
-# Media settings
-media_folder: "src/images/uploads" # Media files will be stored in the repo under this path
-public_folder: "/images/uploads" # The src attribute for uploaded media
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "projects"
@@ -21,8 +17,20 @@ collections:
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Category", name: "category", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
-      - { label: "Body", name: "body", widget: "markdown" }
-      
+      - { label: "Overview", name: "body", widget: "markdown", required: false }
+      - label: "Artworks"
+        name: "artworks"
+        widget: "list"
+        summary: "{{fields.title}}"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Medium", name: "medium", widget: "string" }
+          - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
+          - { label: "Year", name: "year", widget: "string", required: false }
+          - { label: "Description", name: "description", widget: "markdown", required: false }
+          - { label: "Display Order", name: "order", widget: "number", default: 1, value_type: "int" }
+  
   - name: "pages"
     label: "Pages"
     files:

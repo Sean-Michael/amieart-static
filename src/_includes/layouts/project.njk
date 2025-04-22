@@ -20,6 +20,27 @@ templateEngineOverride: njk,md
             {{ content | safe }}
         </div>
         
+        {% if artworks %}
+        <div class="project-artworks">
+            <h2>Project Artworks</h2>
+            
+            <div class="artworks-grid">
+                {% for artwork in artworks %}
+                <div class="artwork-item">
+                    <img src="{{ artwork.image }}" alt="{{ artwork.title }}" class="artwork-image">
+                    <div class="artwork-details">
+                        <h3>{{ artwork.title }}</h3>
+                        {% if artwork.medium %}<p class="artwork-medium">{{ artwork.medium }}</p>{% endif %}
+                        {% if artwork.dimensions %}<p class="artwork-dimensions">{{ artwork.dimensions }}</p>{% endif %}
+                        {% if artwork.year %}<p class="artwork-year">{{ artwork.year }}</p>{% endif %}
+                        {% if artwork.description %}<div class="artwork-description">{{ artwork.description | markdown | safe }}</div>{% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
         <footer class="project-footer">
             <a href="/projects/" class="back-button">← Back to Projects</a>
         </footer>
