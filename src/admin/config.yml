@@ -3,6 +3,12 @@ backend:
   branch: main
 publish_mode: editorial_workflow
 
+# Enable loading of existing values when editing
+load_config_file: true
+local_backend: true
+editor:
+  preview: true
+
 media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
@@ -13,13 +19,14 @@ collections:
     folder: "src/_projects"
     create: true
     slug: "{{slug}}"
-    extension: "md" # Ensure files are created with the .md extension
+    extension: "md" 
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Featured Image", name: "image", widget: "image" }
       - { label: "Category", name: "category", widget: "string" }
       - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/project.njk" }
       - { label: "Overview", name: "body", widget: "markdown", required: false }
       - label: "Artworks"
         name: "artworks"
@@ -43,7 +50,10 @@ collections:
       - file: "src/index.njk"
         label: "Home Page"
         name: "home"
+        editor:
+          preview: true
         fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/base.njk" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Hero Heading", name: "heroHeading", widget: "string" }
           - { label: "Hero Text", name: "heroText", widget: "text" }
@@ -56,16 +66,21 @@ collections:
       - file: "src/bio.njk"
         label: "Bio Page"
         name: "bio"
+        editor:
+          preview: true
         fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/base.njk" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Page Header", name: "pageHeader", widget: "string", default: "About Amie" }
-          - { label: "Bio Image", name: "bioImage", widget: "image" }
+          - { label: "Bio Image", name: "bioImage", widget: "image", required: false }
           - { label: "Bio Title", name: "bioTitle", widget: "string", default: "Contemporary Artist" }
           - { label: "Bio Content", name: "bioContent", widget: "markdown" }
           
           - label: "Bio Stats"
             name: "bioStats"
             widget: "list"
+            summary: "{{fields.title}}"
+            required: false
             fields:
               - { label: "Stat Title", name: "title", widget: "string" }
               - { label: "Stat Text", name: "text", widget: "text" }
@@ -73,6 +88,8 @@ collections:
           - label: "Education"
             name: "education"
             widget: "list"
+            summary: "{{fields.title}}"
+            required: false
             fields:
               - { label: "Year", name: "year", widget: "string" }
               - { label: "Degree/Course", name: "title", widget: "string" }
@@ -81,6 +98,8 @@ collections:
           - label: "Solo Exhibitions"
             name: "soloExhibitions"
             widget: "list"
+            summary: "{{fields.title}}"
+            required: false
             fields:
               - { label: "Year", name: "year", widget: "string" }
               - { label: "Exhibition Title", name: "title", widget: "string" }
@@ -89,6 +108,8 @@ collections:
           - label: "Residencies & Awards"
             name: "residenciesAwards"
             widget: "list"
+            summary: "{{fields.title}}"
+            required: false
             fields:
               - { label: "Year", name: "year", widget: "string" }
               - { label: "Title", name: "title", widget: "string" }
@@ -101,7 +122,10 @@ collections:
       - file: "src/resume.njk"
         label: "Resume Page"
         name: "resume"
+        editor:
+          preview: true
         fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/base.njk" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Hero Heading", name: "heroHeading", widget: "string", default: "Resume" }
           - { label: "Hero Text", name: "heroText", widget: "string", default: "Professional experience & education" }
@@ -110,6 +134,8 @@ collections:
           - label: "Education Items"
             name: "education"
             widget: "list"
+            summary: "{{fields.degree}}"
+            required: false
             fields:
               - { label: "Degree", name: "degree", widget: "string" }
               - { label: "Institution & Years", name: "meta", widget: "string" }
@@ -119,6 +145,8 @@ collections:
           - label: "Exhibition Items"
             name: "exhibitions"
             widget: "list"
+            summary: "{{fields.name}}"
+            required: false
             fields:
               - { label: "Exhibition Name", name: "name", widget: "string" }
               - { label: "Location & Date", name: "meta", widget: "string" }
@@ -128,6 +156,8 @@ collections:
           - label: "Award Items"
             name: "awards"
             widget: "list"
+            summary: "{{fields.name}}"
+            required: false
             fields:
               - { label: "Award Name", name: "name", widget: "string" }
               - { label: "Organization & Date", name: "meta", widget: "string" }
@@ -140,7 +170,10 @@ collections:
       - file: "src/contact.njk"
         label: "Contact Page"
         name: "contact"
+        editor:
+          preview: true
         fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/base.njk" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Page Heading", name: "pageHeading", widget: "string", default: "Get In Touch" }
           - { label: "Page Description", name: "pageDescription", widget: "text", default: "I'm always interested in new projects, collaborations, and opportunities to share my work. Feel free to reach out!" }
@@ -162,6 +195,8 @@ collections:
           - label: "Social Media Links"
             name: "socialLinks"
             widget: "list"
+            summary: "{{fields.platform}}"
+            required: false
             fields:
               - { label: "Platform", name: "platform", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
@@ -171,13 +206,16 @@ collections:
       - file: "src/shop.njk"
         label: "Shop Page"
         name: "shop"
+        editor:
+          preview: true
         fields:
+          - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/base.njk" }
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Hero Heading", name: "heroHeading", widget: "string", default: "Shop" }
           - { label: "Hero Text", name: "heroText", widget: "text" }
           
           - { label: "Shop Heading", name: "shopHeading", widget: "string", default: "Discover Thesshackk" }
           - { label: "Shop Text", name: "shopText", widget: "markdown" }
-          - { label: "Shop Image", name: "shopImage", widget: "image" }
+          - { label: "Shop Image", name: "shopImage", widget: "image", required: false }
           - { label: "Shop Button Text", name: "shopButtonText", widget: "string", default: "Visit The Sshackk on Etsy" }
           - { label: "Shop URL", name: "shopUrl", widget: "string" }
