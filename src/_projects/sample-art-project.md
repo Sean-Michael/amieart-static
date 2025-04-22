@@ -11,5 +11,6 @@ artworks:
     medium: Marker
     dimensions: 10"x10"
     year: "2025"
+    description: coffee shop bike ride
 ---
 Drawing in coffee shops with markers
