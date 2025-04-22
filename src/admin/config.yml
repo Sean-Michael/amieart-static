@@ -6,6 +6,7 @@ media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+  # Projects Collection
   - name: "projects"
     label: "Projects"
     folder: "src/_projects"
@@ -22,6 +23,7 @@ collections:
         name: "artworks"
         widget: "list"
         summary: "{{fields.title}}"
+        allow_add: true
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Image", name: "image", widget: "image" }
@@ -31,9 +33,11 @@ collections:
           - { label: "Description", name: "description", widget: "markdown", required: false }
           - { label: "Display Order", name: "order", widget: "number", default: 1, value_type: "int" }
   
+  # Static Pages Collection
   - name: "pages"
     label: "Pages"
     files:
+      # Home Page
       - file: "src/index.njk"
         label: "Home Page"
         name: "home"
@@ -42,20 +46,28 @@ collections:
           - { label: "Hero Heading", name: "heroHeading", widget: "string" }
           - { label: "Hero Text", name: "heroText", widget: "text" }
           - { label: "Featured Work Heading", name: "workHeading", widget: "string" }
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string", default: "Interested in collaborating?" }
+          - { label: "CTA Text", name: "ctaText", widget: "text", default: "I'm always open to new projects and opportunities to collaborate with other artists, galleries, and art enthusiasts." }
+          - { label: "CTA Button Text", name: "ctaButtonText", widget: "string", default: "Get in Touch" }
           
+      # Bio Page
       - file: "src/bio.njk"
         label: "Bio Page"
         name: "bio"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Page Header", name: "pageHeader", widget: "string", default: "About Amie" }
           - { label: "Bio Image", name: "bioImage", widget: "image" }
-          - { label: "Bio Text", name: "bioContent", widget: "markdown" }
-          - label: "Stats"
-            name: "stats"
+          - { label: "Bio Title", name: "bioTitle", widget: "string", default: "Contemporary Artist" }
+          - { label: "Bio Content", name: "bioContent", widget: "markdown" }
+          
+          - label: "Bio Stats"
+            name: "bioStats"
             widget: "list"
             fields:
               - { label: "Stat Title", name: "title", widget: "string" }
               - { label: "Stat Text", name: "text", widget: "text" }
+          
           - label: "Education"
             name: "education"
             widget: "list"
@@ -63,52 +75,107 @@ collections:
               - { label: "Year", name: "year", widget: "string" }
               - { label: "Degree/Course", name: "title", widget: "string" }
               - { label: "Institution", name: "institution", widget: "string" }
-          - label: "Experience"
-            name: "experience"
-            widget: "list"
-            fields:
-              - { label: "Year", name: "year", widget: "string" }
-              - { label: "Role", name: "title", widget: "string" }
-              - { label: "Company", name: "company", widget: "string" }
-          - label: "Exhibitions"
-            name: "exhibitions"
+          
+          - label: "Solo Exhibitions"
+            name: "soloExhibitions"
             widget: "list"
             fields:
               - { label: "Year", name: "year", widget: "string" }
               - { label: "Exhibition Title", name: "title", widget: "string" }
               - { label: "Location", name: "location", widget: "string" }
+          
+          - label: "Residencies & Awards"
+            name: "residenciesAwards"
+            widget: "list"
+            fields:
+              - { label: "Year", name: "year", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Organization", name: "organization", widget: "string" }
+          
+          - { label: "Artist Statement Heading", name: "statementHeading", widget: "string", default: "Artist Statement" }
           - { label: "Artist Statement", name: "statement", widget: "markdown" }
-              
+          
+      # Resume Page    
       - file: "src/resume.njk"
         label: "Resume Page"
         name: "resume"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Resume Content", name: "content", widget: "markdown" }
+          - { label: "Hero Heading", name: "heroHeading", widget: "string", default: "Resume" }
+          - { label: "Hero Text", name: "heroText", widget: "string", default: "Professional experience & education" }
+          
+          - { label: "Education Section Title", name: "educationTitle", widget: "string", default: "Education" }
+          - label: "Education Items"
+            name: "education"
+            widget: "list"
+            fields:
+              - { label: "Degree", name: "degree", widget: "string" }
+              - { label: "Institution & Years", name: "meta", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+          
+          - { label: "Exhibitions Section Title", name: "exhibitionsTitle", widget: "string", default: "Exhibitions" }
+          - label: "Exhibition Items"
+            name: "exhibitions"
+            widget: "list"
+            fields:
+              - { label: "Exhibition Name", name: "name", widget: "string" }
+              - { label: "Location & Date", name: "meta", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+          
+          - { label: "Awards Section Title", name: "awardsTitle", widget: "string", default: "Awards & Recognitions" }
+          - label: "Award Items"
+            name: "awards"
+            widget: "list"
+            fields:
+              - { label: "Award Name", name: "name", widget: "string" }
+              - { label: "Organization & Date", name: "meta", widget: "string" }
+              - { label: "Description", name: "description", widget: "text", required: false }
+          
+          - { label: "Resume Download Button Text", name: "resumeButtonText", widget: "string", default: "Download Full CV (PDF)" }
           - { label: "Resume PDF", name: "resumePDF", widget: "file", required: false }
           
+      # Contact Page    
       - file: "src/contact.njk"
         label: "Contact Page"
         name: "contact"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Contact Text", name: "contactText", widget: "text" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Address", name: "address", widget: "text" }
-          - label: "Social Media"
-            name: "socialMedia"
+          - { label: "Page Heading", name: "pageHeading", widget: "string", default: "Get In Touch" }
+          - { label: "Page Description", name: "pageDescription", widget: "text", default: "I'm always interested in new projects, collaborations, and opportunities to share my work. Feel free to reach out!" }
+          
+          - { label: "Form Heading", name: "formHeading", widget: "string", default: "Send a Message" }
+          - { label: "Submit Button Text", name: "submitButtonText", widget: "string", default: "Send Message" }
+          
+          - { label: "Contact Info Heading", name: "contactInfoHeading", widget: "string", default: "Contact Information" }
+          - { label: "Email Heading", name: "emailHeading", widget: "string", default: "Email" }
+          - { label: "Email Address", name: "email", widget: "string" }
+          
+          - { label: "Studio Address Heading", name: "addressHeading", widget: "string", default: "Studio Address" }
+          - { label: "Studio Address", name: "address", widget: "text" }
+          
+          - { label: "Studio Hours Heading", name: "hoursHeading", widget: "string", default: "Studio Hours" }
+          - { label: "Studio Hours", name: "hours", widget: "text" }
+          
+          - { label: "Social Media Heading", name: "socialHeading", widget: "string", default: "Connect on Social Media" }
+          - label: "Social Media Links"
+            name: "socialLinks"
             widget: "list"
             fields:
               - { label: "Platform", name: "platform", widget: "string" }
               - { label: "URL", name: "url", widget: "string" }
-              
+              - { label: "Icon", name: "icon", widget: "select", options: ["instagram", "etsy", "linkedin", "facebook", "twitter"], default: "instagram" }
+          
+      # Shop Page    
       - file: "src/shop.njk"
         label: "Shop Page"
         name: "shop"
         fields:
           - { label: "Title", name: "title", widget: "string" }
-          - { label: "Shop Image", name: "shopImage", widget: "image" }
-          - { label: "Shop Heading", name: "shopHeading", widget: "string" }
+          - { label: "Hero Heading", name: "heroHeading", widget: "string", default: "Shop" }
+          - { label: "Hero Text", name: "heroText", widget: "text" }
+          
+          - { label: "Shop Heading", name: "shopHeading", widget: "string", default: "Discover Thesshackk" }
           - { label: "Shop Text", name: "shopText", widget: "markdown" }
+          - { label: "Shop Image", name: "shopImage", widget: "image" }
+          - { label: "Shop Button Text", name: "shopButtonText", widget: "string", default: "Visit The Sshackk on Etsy" }
           - { label: "Shop URL", name: "shopUrl", widget: "string" }

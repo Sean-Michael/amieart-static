@@ -1,51 +1,48 @@
 ---
 layout: layouts/base.njk
-title: Projects
-permalink: /projects/
+permalink: /projects/{{ page.fileSlug }}/
+templateEngineOverride: njk,md
 ---
 
 <div class="container">
-    <section class="hero">
-        <h1>Projects</h1>
-        <p>A collection of my artistic works and explorations</p>
-    </section>
-    
-    <section class="featured-work">
-        <div class="work-grid">
-            {%- for project in collections.projects -%}
-            <a href="{{ project.url }}" class="work-item">
-                <img src="{{ project.data.image }}" alt="{{ project.data.title }}" class="work-image">
-                <div class="work-overlay">
-                    <h3 class="work-title">{{ project.data.title }}</h3>
-                    <p class="work-category">{{ project.data.category }}</p>
-                </div>
-            </a>
-            {%- endfor -%}
-            
-            {% if collections.projects.length === 0 %}
-            <!-- Placeholder items when no projects exist yet -->
-            <div class="work-item">
-                <img src="/api/placeholder/400/400" alt="Project 1" class="work-image">
-                <div class="work-overlay">
-                    <h3 class="work-title">Project Title 1</h3>
-                    <p class="work-category">Painting Series</p>
-                </div>
-            </div>
-            <div class="work-item">
-                <img src="/api/placeholder/400/400" alt="Project 2" class="work-image">
-                <div class="work-overlay">
-                    <h3 class="work-title">Project Title 2</h3>
-                    <p class="work-category">Installation</p>
-                </div>
-            </div>
-            <div class="work-item">
-                <img src="/api/placeholder/400/400" alt="Project 3" class="work-image">
-                <div class="work-overlay">
-                    <h3 class="work-title">Project Title 3</h3>
-                    <p class="work-category">Mixed Media</p>
-                </div>
-            </div>
-            {% endif %}
+    <article class="project-detail">
+        <header class="project-header">
+            <h1>{{ title }}</h1>
+            <p class="project-category">{{ category }}</p>
+            <p class="project-date">{{ date | dateFilter }}</p>
+        </header>
+        
+        <div class="project-image">
+            <img src="{{ image }}" alt="{{ title }}">
         </div>
-    </section>
+        
+        <div class="project-content">
+            {{ content | safe }}
+        </div>
+        
+        {% if artworks %}
+        <div class="project-artworks">
+            <h2>Project Artworks</h2>
+            
+            <div class="artworks-grid">
+                {% for artwork in artworks | sort(false, false, 'order') %}
+                <div class="artwork-item">
+                    <img src="{{ artwork.image }}" alt="{{ artwork.title }}" class="artwork-image">
+                    <div class="artwork-details">
+                        <h3>{{ artwork.title }}</h3>
+                        {% if artwork.medium %}<p class="artwork-medium">{{ artwork.medium }}</p>{% endif %}
+                        {% if artwork.dimensions %}<p class="artwork-dimensions">{{ artwork.dimensions }}</p>{% endif %}
+                        {% if artwork.year %}<p class="artwork-year">{{ artwork.year }}</p>{% endif %}
+                        {% if artwork.description %}<div class="artwork-description">{{ artwork.description | safe }}</div>{% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <footer class="project-footer">
+            <a href="/projects/" class="back-button">← Back to Projects</a>
+        </footer>
+    </article>
 </div>
