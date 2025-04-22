@@ -18,6 +18,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("limit", function(array, limit) {
     return array.slice(0, limit);
   });
+
+  // Add a custom 'markdown' filter
+  const markdownIt = require("markdown-it");
+  const markdownLib = markdownIt({ html: true });
+  eleventyConfig.addFilter("markdown", function(content) {
+    return markdownLib.render(content);
+  });
   
   // Collections
   eleventyConfig.addCollection("projects", function(collection) {
