@@ -5,6 +5,14 @@ image: /images/uploads/r1-01249-005a.jpg
 category: Oil Painting
 date: 2025-04-09T00:00:00.000Z
 layout: layouts/project.njk
+artworks:
+  - order: 1
+    image: /images/uploads/r1-01261-008a.jpg
+    title: Fried Egg in Pan Still life
+    medium: Oil on Wood
+    dimensions: 6x8
+    year: "2025"
+    description: blah blah blah
 ---
 ## About This Artwork
 
