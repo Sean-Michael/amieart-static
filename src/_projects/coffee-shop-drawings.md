@@ -1,7 +1,7 @@
 ---
 title: Coffee Shop Drawings
 description: "I like to draw at coffee shops with markers and colored pencils. "
-image: /images/uploads/r1-00727-002a.jpg
+image: /images/uploads/r1-01261-026a_original.jpg
 category: Drawing
 date: 2025-04-22T13:15:00.000Z
 artworks:
