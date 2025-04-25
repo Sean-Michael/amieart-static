@@ -12,6 +12,11 @@ artworks:
     title: endurance contest
     image: /images/uploads/img_2838-2.jpg
     medium: oil on papare
+  - order: 2
+    title: roe
+    image: /images/uploads/img_2850.jpg
+    medium: acrylic on wood panels
+    year: "2024"
 ---
 ## About This Artwork
 
