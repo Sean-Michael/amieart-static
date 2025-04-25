@@ -17,6 +17,10 @@ artworks:
     image: /images/uploads/img_2850.jpg
     medium: acrylic on wood panels
     year: "2024"
+  - order: 1
+    title: Still Life 1
+    image: /images/uploads/img_2910.jpg
+    medium: oil on wood panel
 ---
 ## About This Artwork
 
