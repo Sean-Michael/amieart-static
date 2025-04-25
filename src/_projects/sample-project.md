@@ -1,18 +1,13 @@
 ---
-title: Senior Thesis
-description: Everywhere everyone everything
-image: /images/uploads/r1-01249-005a.jpg
-category: Oil Painting
+title: "Senior Thesis: Everyday, Everything, Everyone"
+description: "Everyday, Everything, Everyone was a project created as part of my
+  senior thesis to be displayed in the senior art group show: All Over This
+  Place!"
+image: /images/uploads/img_2803.jpg
+category: "Oil Painting / mixed media "
 date: 2025-04-09T00:00:00.000Z
 layout: layouts/project.njk
-artworks:
-  - order: 1
-    image: /images/uploads/r1-01261-008a.jpg
-    title: Fried Egg in Pan Still life
-    medium: Oil on Wood
-    dimensions: 6x8
-    year: "2025"
-    description: blah blah blah
+artworks: []
 ---
 ## About This Artwork
 
