@@ -7,7 +7,11 @@ image: /images/uploads/img_2803.jpg
 category: "Oil Painting / mixed media "
 date: 2025-04-09T00:00:00.000Z
 layout: layouts/project.njk
-artworks: []
+artworks:
+  - order: 1
+    title: endurance contest
+    image: /images/uploads/img_2838-2.jpg
+    medium: oil on papare
 ---
 ## About This Artwork
 
