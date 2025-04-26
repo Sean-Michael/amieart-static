@@ -5,19 +5,19 @@ title: Shop
 
 <div class="container">
     <section class="hero">
-        <h1>Shop</h1>
-        <p>Explore unique creations and artistic works available on my Etsy shop, The Sshackk.</p>
+        <h1>{{ shop.heroHeading }}</h1>
+        <p>{{ shop.heroText }}</p>
     </section>
 
     <section class="shop-highlight">
         <div class="shop-content">
             <div class="shop-image">
-                <img src="/api/placeholder/600/400" alt="Etsy Shop Preview" class="shop-preview">
+                <img src="{{ shop.highlightImage }}" alt="Etsy Shop Preview" class="shop-preview">
             </div>
             <div class="shop-description">
-                <h2>Discover Thesshackk</h2>
-                <p>Welcome to The Sshackk, where you can find a curated selection of my artistic creations. From paintings and prints to handmade crafts, each piece is designed with care and passion. Visit my Etsy shop to explore the full collection and bring a piece of art into your life.</p>
-                <a href="https://www.etsy.com/shop/Thesshackk" class="button" target="_blank">Visit The Sshackk on Etsy</a>
+                <h2>{{ shop.highlightHeading }}</h2>
+                <p>{{ shop.highlightText }}</p>
+                <a href="{{ shop.highlightButtonLink }}" class="button" target="_blank">{{ shop.highlightButtonText }}</a>
             </div>
         </div>
     </section>

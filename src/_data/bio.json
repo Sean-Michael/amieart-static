@@ -1,0 +1,72 @@
+{
+  "soloExhibitions": [
+    {
+      "year": "2024",
+      "title": "\"Ephemeral Landscapes\"",
+      "location": "Modern Gallery, San Francisco"
+    },
+    {
+      "year": "2022",
+      "title": "\"Digital Nature\"",
+      "location": "Contemporary Arts Center, Boston"
+    },
+    {
+      "year": "2020",
+      "title": "\"Fragments\"",
+      "location": "Riverside Gallery, Chicago"
+    }
+  ],
+  "education": [
+    {
+      "year": "2018",
+      "title": "MFA in Fine Arts",
+      "institution": "School of Visual Arts, New York"
+    },
+    {
+      "year": "2015",
+      "title": "BFA in Studio Art",
+      "institution": "Rhode Island School of Design"
+    },
+    {
+      "year": "2014",
+      "title": "Study Abroad Program",
+      "institution": "Florence University of the Arts, Italy"
+    }
+  ],
+  "residenciesAwards": [
+    {
+      "year": "2023",
+      "title": "Artist Residency",
+      "location": "MacDowell Colony, New Hampshire"
+    },
+    {
+      "year": "2021",
+      "title": "Emerging Artist Grant",
+      "location": "National Arts Foundation"
+    },
+    {
+      "year": "2019",
+      "title": "International Residency Program",
+      "location": "Berlin Arts Initiative, Germany"
+    }
+  ],
+  "statement": "blah blah blah \n\nMy work investigates the shifting boundaries between the natural and artificial worlds. I am interested in how our increasingly digital existence transforms our relationship with organic forms and natural processes.\n\nThrough a combination of traditional and digital techniques, I create pieces that question the authenticity of our experience with nature in an age where such experiences are often mediated through screens and interfaces. I'm drawn to the ironies and contradictions that emerge when technology attempts to simulate or improve upon the natural world.\n\nBy juxtaposing organic materials with digital processes, my work invites viewers to reconsider their own connection to the physical environment and to reflect on what might be lost or gained as we increasingly inhabit virtual spaces. I seek to create moments of pause—spaces for contemplation about our place within both natural and constructed ecosystems.",
+  "bioTitle": "Contemporary Artist",
+  "bioContent": "Amie is a multidisciplinary artist based in Salem, Oregon, whose work explores themes of identity, memory, and the relationship between humans and nature in the modern world.\n\nWith a background in fine arts and environmental studies, her practice spans painting, sculpture, installation, and digital media. Her work has been exhibited in galleries and museums across North America and Europe, and she has participated in several prestigious artist residency programs.\n\nAmie's art is characterized by a thoughtful balance between conceptual depth and visual appeal, often incorporating elements from the natural world reinterpreted through a contemporary lens. Her recent series examines the impact of technology on our perception of nature and the ways in which digital interfaces mediate our experience of the physical world.",
+  "bioImage": "/images/uploads/r1-01260-0026.jpg",
+  "bioStats": [
+    {
+      "title": "Education",
+      "text": "B.A. Studio Art"
+    },
+    {
+      "title": "Exhibitions",
+      "text": "25+ Group Shows<br>8 Solo Exhibitions"
+    },
+    {
+      "title": "Recognition",
+      "text": "3 Arts Council Grants<br>2 Residency Fellowships"
+    }
+  ],
+  "pageHeader": "About Amie"
+}

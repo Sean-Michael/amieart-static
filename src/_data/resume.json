@@ -1,0 +1,58 @@
+{
+  "heroHeading": "Resume",
+  "heroText": "Professional experience & education",
+  "sections": [
+    {
+      "title": "Education",
+      "items": [
+        {
+          "heading": "MFA in Studio Art",
+          "meta": "University of Arts, 2020-2022",
+          "description": "Specialized in contemporary painting techniques with a minor in digital arts. Thesis project explored the intersection of traditional and digital mediums."
+        },
+        {
+          "heading": "BFA in Fine Arts",
+          "meta": "State College of Design, 2016-2020",
+          "description": "Focused on painting, drawing, and mixed media. Graduated with honors."
+        }
+      ]
+    },
+    {
+      "title": "Exhibitions",
+      "items": [
+        {
+          "heading": "Solo Exhibition: \"Inner Landscapes\"",
+          "meta": "Gallery Modern, Salem OR, 2024",
+          "description": "A collection of large-scale abstract paintings exploring themes of memory and place."
+        },
+        {
+          "heading": "Group Exhibition: \"New Perspectives\"",
+          "meta": "Contemporary Art Space, Portland OR, 2023",
+          "description": "Featured three pieces in a collective exhibition of emerging Pacific Northwest artists."
+        },
+        {
+          "heading": "Graduate Showcase",
+          "meta": "University Gallery, 2022",
+          "description": "Thesis exhibition featuring a multimedia installation combining painting, projection, and sound."
+        }
+      ]
+    },
+    {
+      "title": "Awards & Recognitions",
+      "items": [
+        {
+          "heading": "Emerging Artist Grant",
+          "meta": "Northwest Arts Foundation, 2023",
+          "description": "Awarded funding to develop a new body of work exploring environmental themes."
+        },
+        {
+          "heading": "Best in Show",
+          "meta": "Annual Arts Festival, Salem OR, 2021",
+          "description": "Awarded for mixed media piece \"Fragmented Memory #3\"."
+        }
+      ]
+    }
+  ],
+  "ctaButtonText": "Download Full CV (PDF)",
+  "ctaButtonLink": "#"
+}

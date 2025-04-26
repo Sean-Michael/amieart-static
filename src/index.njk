@@ -1,9 +1,6 @@
 ---
 layout: layouts/base.njk
 title: Home
-heroHeading: Amie Holstein
-heroText: Artistic Journey
-workHeading: Featured Projects
 eleventyNavigation:
   key: Home
   order: 1
@@ -11,13 +8,13 @@ eleventyNavigation:
 
 <div class="container">
     <section class="hero">
-        <h1>{{ heroHeading }}</h1>
-        <p>{{ heroText }}</p>
+        <h1>{{ index.heroHeading }}</h1>
+        <p>{{ index.heroText }}</p>
         <a href="/projects/" class="button">View Work</a>
     </section>
     
     <section class="featured-work">
-        <h2 class="section-title">{{ workHeading }}</h2>
+        <h2 class="section-title">{{ index.workHeading }}</h2>
         <div class="work-grid">
             {%- for project in collections.projects | limit(3) -%}
             <a href="{{ project.url }}" class="work-item">
@@ -59,8 +56,8 @@ eleventyNavigation:
 
 <section class="cta">
     <div class="container">
-        <h2>Interested in collaborating?</h2>
-        <p>I'm always open to new projects and opportunities to collaborate with other artists, galleries, and art enthusiasts.</p>
-        <a href="/contact/" class="button">Get in Touch</a>
+        <h2>{{ index.ctaHeading }}</h2>
+        <p>{{ index.ctaText }}</p>
+        <a href="{{ index.ctaButtonLink }}" class="button">{{ index.ctaButtonText }}</a>
     </div>
 </section>
