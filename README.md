@@ -32,9 +32,6 @@ npm run dev
 
 This website is hosted on Netlify, providing continuous deployment from the main branch.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/project-id/deploy-status)](https://app.netlify.com/sites/amieart/deploys)
-
-
 ## Content Management
 
 ### Accessing the CMS
@@ -48,6 +45,8 @@ This website is hosted on Netlify, providing continuous deployment from the main
 The CMS provides interfaces for editing:
 
 - **Projects**: Add or edit portfolio projects, including images and descriptions
+- **Artworks**: Manage individual artworks, including details like medium, dimensions, and year
+- **Gallery**: Browse and filter all artworks by medium and year
 - **Pages**: Edit content for the Home, Bio, Resume, Contact, and Shop pages
 - **Media**: Upload and manage images for use in content
 
@@ -55,6 +54,7 @@ The CMS provides interfaces for editing:
 
 - Responsive design with dark mode support
 - Portfolio project showcase
+- Gallery with filtering options for artworks
 - Bio and resume sections
 - Contact page
 - Shop link integration
