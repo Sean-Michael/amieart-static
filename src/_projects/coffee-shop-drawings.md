@@ -1,16 +1,10 @@
 ---
 title: Coffee Shop Drawings
-description: "I like to draw at coffee shops with markers and colored pencils. "
+description: I like to practice drawing at coffee shops.
 image: /images/uploads/r1-01261-026a_original.jpg
 category: Drawing
-date: 2025-04-22T13:15:00.000Z
+date: 2025-04-25T23:26:00.000Z
+layout: layouts/project.njk
 artworks:
-  - order: 1
-    title: Spilled Mocha
-    image: /images/uploads/r1-00727-003a.jpg
-    medium: Marker on Paper
-    dimensions: 10"x10"
-    year: "2025"
-    description: Drawing of vase and flower at Cafe Blue
+  - spilled-mocha
 ---
-Pencils, markers, coffee

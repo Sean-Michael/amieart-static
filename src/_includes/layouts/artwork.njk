@@ -5,46 +5,96 @@ layout: layouts/base.njk
 <div class="container">
     <article class="artwork-showcase">
         <header class="artwork-header">
-            <h1>{{ artwork.title }}</h1>
-            <p class="artwork-project-link">From project: <a href="/projects/{{ project.fileSlug }}/">{{ project.data.title }}</a></p>
+            <h1>{{ title }}</h1>
+            
+            {% if collections.projects %}
+                {% set belongsToProjects = [] %}
+                {% for project in collections.projects %}
+                    {% if project.data.artworks and project.data.artworks.includes(page.fileSlug) %}
+                        {% set belongsToProjects = (belongsToProjects.push(project), belongsToProjects) %}
+                    {% endif %}
+                {% endfor %}
+                
+                {% if belongsToProjects.length > 0 %}
+                <div class="artwork-collections">
+                    <p>Featured in: 
+                    {% for project in belongsToProjects %}
+                        <a href="{{ project.url }}">{{ project.data.title }}</a>{% if not loop.last %}, {% endif %}
+                    {% endfor %}
+                    </p>
+                </div>
+                {% endif %}
+            {% endif %}
         </header>
         
-        <div class="artwork-image-container">
-            <img src="{{ artwork.image }}" alt="{{ artwork.title }}" class="artwork-showcase-image">
+        <div class="artwork-slideshow">
+            <div class="primary-image">
+                <img src="{{ primaryImage }}" alt="{{ title }}" class="artwork-showcase-image">
+            </div>
+            
+            {% if images and images.length > 0 %}
+            <div class="additional-images">
+                <div class="thumbnails">
+                    <div class="thumbnail active" data-image="{{ primaryImage }}">
+                        <img src="{{ primaryImage }}" alt="{{ title }}">
+                    </div>
+                    {% for img in images %}
+                    <div class="thumbnail" data-image="{{ img.image }}">
+                        <img src="{{ img.image }}" alt="{{ img.caption or title }}">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
         </div>
         
         <div class="artwork-details-container">
             <div class="artwork-info">
-                {% if artwork.medium %}<p class="artwork-medium"><strong>Medium:</strong> {{ artwork.medium }}</p>{% endif %}
-                {% if artwork.dimensions %}<p class="artwork-dimensions"><strong>Dimensions:</strong> {{ artwork.dimensions }}</p>{% endif %}
-                {% if artwork.year %}<p class="artwork-year"><strong>Year:</strong> {{ artwork.year }}</p>{% endif %}
+                {% if medium %}<p class="artwork-medium"><strong>Medium:</strong> {{ medium }}</p>{% endif %}
+                {% if dimensions %}<p class="artwork-dimensions"><strong>Dimensions:</strong> {{ dimensions }}</p>{% endif %}
+                {% if year %}<p class="artwork-year"><strong>Year:</strong> {{ year }}</p>{% endif %}
+                {% if tags %}
+                <p class="artwork-tags">
+                    <strong>Tags:</strong> 
+                    {% for tag in tags %}
+                    <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </p>
+                {% endif %}
             </div>
             
-            {% if artwork.description %}
+            {% if description %}
             <div class="artwork-description">
-                {{ artwork.description | markdown | safe }}
+                {{ description | markdown | safe }}
             </div>
             {% endif %}
         </div>
         
         <div class="artwork-navigation">
-            {% if prevArtwork %}
-            <a href="/projects/{{ project.fileSlug }}/artwork/{{ prevArtwork.order or loop.index0 - 1 }}/" class="nav-prev" title="{{ prevArtwork.title }}">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                Previous
+            <a href="/gallery/" class="nav-back">
+                Back to Gallery
             </a>
-            {% endif %}
-            
-            <a href="/projects/{{ project.fileSlug }}/" class="nav-back">
-                Back to Project
-            </a>
-            
-            {% if nextArtwork %}
-            <a href="/projects/{{ project.fileSlug }}/artwork/{{ nextArtwork.order or loop.index0 + 1 }}/" class="nav-next" title="{{ nextArtwork.title }}">
-                Next
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </a>
-            {% endif %}
         </div>
     </article>
 </div>
+
+{% if images and images.length > 0 %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const thumbnails = document.querySelectorAll('.thumbnail');
+    const primaryImage = document.querySelector('.primary-image img');
+    
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            // Update main image
+            primaryImage.src = this.getAttribute('data-image');
+            primaryImage.alt = this.querySelector('img').alt;
+            
+            // Update active state
+            thumbnails.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+});
+</script>
+{% endif %}

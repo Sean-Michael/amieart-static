@@ -1,0 +1,92 @@
+---
+layout: layouts/base.njk
+title: Gallery
+permalink: /gallery/
+---
+
+<div class="container">
+    <section class="page-header">
+        <h1>Gallery</h1>
+        <p>Browse all artworks</p>
+    </section>
+    
+    <section class="filter-section">
+        <div class="filters">
+            <label for="filter-medium">Filter by Medium:</label>
+            <select id="filter-medium" class="filter-select">
+                <option value="">All Mediums</option>
+                {% set mediums = [] %}
+                {% for artwork in collections.artworks %}
+                    {% if artwork.data.medium and not mediums.includes(artwork.data.medium) %}
+                        {% set mediums = (mediums.push(artwork.data.medium), mediums) %}
+                    {% endif %}
+                {% endfor %}
+                
+                {% for medium in mediums | sort %}
+                <option value="{{ medium }}">{{ medium }}</option>
+                {% endfor %}
+            </select>
+            
+            <label for="filter-year">Filter by Year:</label>
+            <select id="filter-year" class="filter-select">
+                <option value="">All Years</option>
+                {% set years = [] %}
+                {% for artwork in collections.artworks %}
+                    {% if artwork.data.year and not years.includes(artwork.data.year) %}
+                        {% set years = (years.push(artwork.data.year), years) %}
+                    {% endif %}
+                {% endfor %}
+                
+                {% for year in years | sort | reverse %}
+                <option value="{{ year }}">{{ year }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </section>
+    
+    <section id="gallery-grid" class="gallery-grid">
+        {% for artwork in collections.artworks %}
+        <a href="{{ artwork.url }}" class="artwork-item" 
+           data-medium="{{ artwork.data.medium }}" 
+           data-year="{{ artwork.data.year }}">
+            <img src="{{ artwork.data.primaryImage }}" alt="{{ artwork.data.title }}" class="artwork-image">
+            <div class="artwork-details">
+                <h3>{{ artwork.data.title }}</h3>
+                {% if artwork.data.medium %}<p class="artwork-medium">{{ artwork.data.medium }}</p>{% endif %}
+                {% if artwork.data.year %}<p class="artwork-year">{{ artwork.data.year }}</p>{% endif %}
+            </div>
+        </a>
+        {% endfor %}
+    </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterMedium = document.getElementById('filter-medium');
+    const filterYear = document.getElementById('filter-year');
+    const galleryGrid = document.getElementById('gallery-grid');
+    const artworkItems = document.querySelectorAll('.artwork-item');
+    
+    function applyFilters() {
+        const mediumFilter = filterMedium.value;
+        const yearFilter = filterYear.value;
+        
+        artworkItems.forEach(item => {
+            const medium = item.getAttribute('data-medium');
+            const year = item.getAttribute('data-year');
+            
+            const mediumMatch = !mediumFilter || medium === mediumFilter;
+            const yearMatch = !yearFilter || year === yearFilter;
+            
+            if (mediumMatch && yearMatch) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+    
+    filterMedium.addEventListener('change', applyFilters);
+    filterYear.addEventListener('change', applyFilters);
+});
+</script>

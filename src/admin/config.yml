@@ -13,6 +13,32 @@ media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+  # Artworks Collection
+  - name: "artworks"
+    label: "Artworks"
+    folder: "src/_artworks"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Medium", name: "medium", widget: "string" }
+      - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
+      - { label: "Year", name: "year", widget: "string" }
+      - { label: "Description", name: "description", widget: "markdown", required: false }
+      - { label: "Primary Image", name: "primaryImage", widget: "image" }
+      - label: "Additional Images"
+        name: "images"
+        widget: "list"
+        summary: "{{fields.image}}"
+        required: false
+        fields:
+          - { label: "Image", name: "image", widget: "image" }
+          - { label: "Caption", name: "caption", widget: "string", required: false }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/artwork.njk" }
+
   # Projects Collection
   - name: "projects"
     label: "Projects"
@@ -28,19 +54,14 @@ collections:
       - { label: "Date", name: "date", widget: "datetime" }
       - { label: "Layout", name: "layout", widget: "hidden", default: "layouts/project.njk" }
       - { label: "Overview", name: "body", widget: "markdown", required: false }
-      - label: "Artworks"
+      - label: "Artwork Selection"
         name: "artworks"
-        widget: "list"
-        summary: "{{fields.title}}"
-        allow_add: true
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Image", name: "image", widget: "image" }
-          - { label: "Medium", name: "medium", widget: "string" }
-          - { label: "Dimensions", name: "dimensions", widget: "string", required: false }
-          - { label: "Year", name: "year", widget: "string", required: false }
-          - { label: "Description", name: "description", widget: "markdown", required: false }
-          - { label: "Display Order", name: "order", widget: "number", default: 1, value_type: "int" }
+        widget: "relation"
+        collection: "artworks"
+        value_field: "{{slug}}"
+        search_fields: ["title", "medium", "year"]
+        display_fields: ["title", "year"]
+        multiple: true
   
   # Static Pages Collection
   - name: "pages"
@@ -100,17 +121,6 @@ collections:
         fields:
           - { label: "Hero Heading", name: "heroHeading", widget: "string", default: "Projects" }
           - { label: "Hero Text", name: "heroText", widget: "string", default: "A collection of my artistic works and explorations" }
-
-      # 404 Page
-      - file: "src/_data/404.json"
-        label: "404 Page"
-        name: "404"
-        editor:
-          preview: true
-        fields:
-          - { label: "Title", name: "title", widget: "string", default: "Page Not Found" }
-          - { label: "Message", name: "message", widget: "text", default: "The page you're looking for doesn't seem to exist." }
-          - { label: "CTA Text", name: "ctaText", widget: "string", default: "Please check the URL or navigate back to the homepage." }
 
       # Shop Page
       - file: "src/_data/shop.json"

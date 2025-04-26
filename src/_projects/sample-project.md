@@ -8,19 +8,7 @@ category: "Oil Painting / mixed media "
 date: 2025-04-09T00:00:00.000Z
 layout: layouts/project.njk
 artworks:
-  - order: 1
-    title: endurance contest
-    image: /images/uploads/img_2838-2.jpg
-    medium: oil on papare
-  - order: 2
-    title: roe
-    image: /images/uploads/img_2850.jpg
-    medium: acrylic on wood panels
-    year: "2024"
-  - order: 1
-    title: Still Life 1
-    image: /images/uploads/img_2910.jpg
-    medium: oil on wood panel
+  - roe
 ---
 ## About This Artwork
 

@@ -25,15 +25,18 @@ templateEngineOverride: njk,md
             <h2>Project Artworks</h2>
             
             <div class="artworks-grid">
-                {% for artwork in artworks %}
-                <a href="/projects/{{ page.fileSlug }}/artwork/{{ artwork.order | slug }}/" class="artwork-item">
-                    <img src="{{ artwork.image }}" alt="{{ artwork.title }}" class="artwork-image">
-                    <div class="artwork-details">
-                        <h3>{{ artwork.title }}</h3>
-                        {% if artwork.medium %}<p class="artwork-medium">{{ artwork.medium }}</p>{% endif %}
-                        <p class="artwork-view">View Details →</p>
-                    </div>
-                </a>
+                {% for artworkSlug in artworks %}
+                    {% set artwork = collections.artworks | getArtworkBySlug(artworkSlug) %}
+                    {% if artwork %}
+                    <a href="{{ artwork.url }}" class="artwork-item">
+                        <img src="{{ artwork.data.primaryImage }}" alt="{{ artwork.data.title }}" class="artwork-image">
+                        <div class="artwork-details">
+                            <h3>{{ artwork.data.title }}</h3>
+                            {% if artwork.data.medium %}<p class="artwork-medium">{{ artwork.data.medium }}</p>{% endif %}
+                            <p class="artwork-view">View Details →</p>
+                        </div>
+                    </a>
+                    {% endif %}
                 {% endfor %}
             </div>
         </div>
