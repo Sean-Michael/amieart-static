@@ -159,7 +159,7 @@ collections:
                   - { label: "Meta", name: "meta", widget: "string" }
                   - { label: "Description", name: "description", widget: "text" }
           - { label: "CTA Button Text", name: "ctaButtonText", widget: "string", default: "Download Full CV (PDF)" }
-          - { label: "CTA Button Link", name: "ctaButtonLink", widget: "string", default: "#" }
+          - { label: "Resume PDF", name: "resumePdf", widget: "file", required: false, media_folder: "../files", public_forlder: "/files" }
 
       # Contact Page
       - file: "src/_data/contact.json"

@@ -1,6 +1,6 @@
 {
   "heroHeading": "Resume",
-  "heroText": "Professional experience & education",
+  "heroText": "blah",
   "sections": [
     {
       "title": "Education",
@@ -54,5 +54,6 @@
     }
   ],
   "ctaButtonText": "Download Full CV (PDF)",
-  "ctaButtonLink": "#"
+  "ctaButtonLink": "#",
+  "resumePdf": "../files/sean-michael-riesterer-resume.pdf"
 }
