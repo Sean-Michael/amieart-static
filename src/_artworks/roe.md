@@ -1,6 +1,6 @@
 ---
 title: Roe
-medium: Oil on Wood Panels
+medium: Acrylic on Wood Panels
 year: "2025"
 description: ""
 primaryImage: /images/uploads/img_2850.jpg
