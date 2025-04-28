@@ -2,20 +2,7 @@
   "heroHeading": "Get In Touch",
   "heroText": "I'm always interested in new projects, collaborations, and opportunities to share my work. Feel free to reach out!",
   "formHeading": "Send a Message",
-  "contactInfo": [
-    {
-      "title": "Email",
-      "text": "info@amie-artist.com"
-    },
-    {
-      "title": "Studio Address",
-      "text": "123 Artist Lane<br>Studio #456<br>Salem, OR"
-    },
-    {
-      "title": "Studio Hours",
-      "text": "Monday - Friday: 10am - 6pm<br>Weekends: By appointment only"
-    }
-  ],
+  "contactInfo": [],
   "socialLinks": [
     {
       "title": "Instagram",
@@ -24,10 +11,6 @@
     {
       "title": "Etsy",
       "url": "https://www.etsy.com/shop/Thesshackk"
-    },
-    {
-      "title": "LinkedIn",
-      "url": "#"
     }
   ]
 }
