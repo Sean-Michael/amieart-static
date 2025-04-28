@@ -11,14 +11,14 @@
       "location": "Willamette University Gallery, Salem, Oregon"
     },
     {
-      "year": "2024",
+      "location": "Willamette University Gallery, Salem, Oregon",
       "title": "7th Annual Juried Art Show",
-      "location": "Willamette University Gallery, Salem, Oregon"
+      "year": "2024"
     },
     {
-      "year": "2023",
       "title": "6th Annual Juried Art Show",
-      "location": "Willamette University Gallery, Salem, Oregon"
+      "location": "Willamette University Gallery, Salem, Oregon",
+      "year": "2023"
     },
     {
       "year": "2022",
@@ -29,30 +29,15 @@
   "education": [
     {
       "year": "2025",
-      "title": "Bachelor of Arts in Studio Art",
-      "institution": "Willamette University, Salem, Oregon"
-    },
-    {
-      "year": "2025",
-      "title": "Minor in Business",
-      "institution": "Willamette University, Salem, Oregon"
-    },
-    {
-      "year": "2025",
-      "title": "Minor in Art History",
-      "institution": "Willamette University, Salem, Oregon"
+      "title": "BA Studio Art - Minor in Business & Art History",
+      "institution": "Willamette University, Oregon"
     }
   ],
   "residenciesAwards": [
     {
-      "year": "2022",
-      "title": "Joseph T Albert Prize",
-      "location": "Willamette University"
-    },
-    {
-      "year": "2023",
-      "title": "Robert Hess Award",
-      "location": "Willamette University Art Department"
+      "year": "2024",
+      "title": "Best in Show - 7th Annual Juried Art Show",
+      "location": "Willamette University Gallery, Salem, Oregon"
     },
     {
       "year": "2024",
@@ -60,28 +45,25 @@
       "location": "Willamette University"
     },
     {
-      "year": "2024",
-      "title": "Best in Show",
-      "location": "7th Annual Juried Art Show, Willamette University"
+      "year": "2023",
+      "title": "Robert Hess Award",
+      "location": "Willamette University"
+    },
+    {
+      "year": "2022",
+      "title": "Joseph T Albert Prize",
+      "location": "Willamette University"
     }
   ],
-  "statement": "My work explores the intersection of traditional artistic practices and contemporary themes. Through various media including printmaking, painting, and installation, I investigate the relationships between artistic expression and community engagement.\n\nI am particularly interested in creating accessible art experiences that bridge diverse communities, as demonstrated by my work with Living Studios supporting artists with neurological and physical disabilities. My artistic practice combines technical skill with collaborative approaches, ensuring that art can be both personally expressive and socially impactful.\n\nBy balancing formal artistic training with real-world applications, my work invites viewers to consider the role of art in fostering connection and community. I strive to create pieces that are both visually compelling and conceptually meaningful, using my diverse skill set in set design, scenic painting, printmaking, and digital media to create multifaceted artistic experiences.",
-  "bioTitle": "Artist & Arts Facilitator",
-  "bioContent": "Amie Holstein is a multidisciplinary artist based in Salem, Oregon, whose work spans traditional and contemporary media. Currently completing her Bachelor of Arts in Studio Art with minors in Business and Art History at Willamette University, Amie maintains an impressive 3.87 GPA while actively contributing to the arts community.\n\nWith extensive experience as a Student Art Coordinator, Living Studios Intern, and Scenic Studio Supervisor, Amie has developed a diverse skill set that includes installation work, supporting artists with disabilities, and leading collaborative art projects. Her technical abilities encompass scenic painting, printmaking techniques including cyanotype and intaglio, welding, woodworking, and digital design.\n\nAmie's artistic practice is complemented by her commitment to accessibility and inclusion in creative spaces. Her work has been recognized with multiple prestigious awards including the Joseph T Albert Prize, Robert Hess Award, and Jesse E. West Award. Her exhibitions include the upcoming Senior Art Thesis Exhibition at the Hallie Ford Museum of Art and multiple appearances in juried shows, including winning Best in Show at the 7th Annual Juried Art Show.",
-  "bioImage": "/images/uploads/r1-01260-0026.jpg",
+  "statement": "",
+  "bioTitle": "Artist",
+  "bioContent": "Amie Holstein is a painter and collage artist whose work explores themes of *consumption, clutter, and everyday life*. Through depictions of food, people, and domestic objects, she captures the overlooked moments that shape our routines and relationships. Her expressive, fast-paced process embraces imperfection, using scraps, bold colors, and gestural mark-making to reflect the chaos and stillness found in ordinary spaces.\n\nAmie’s work often feels visually overwhelming—dense, messy, and immediate—but it invites a slower look. She magnifies the mundane: dirty dishes, discarded packaging, unmade beds. These images are not cleaned up or idealized, but shown as they are—lived-in, imperfect, and real. Her art becomes a space for reflection, asking viewers to reconsider what we throw away, what we hold onto, and how everyday scenes shape our shared experience.",
+  "bioImage": "/images/uploads/r1-01249-027a.jpg",
   "bioStats": [
     {
       "title": "Education",
-      "text": "B.A. Studio Art, Willamette University"
-    },
-    {
-      "title": "Exhibitions",
-      "text": "4 Juried Shows, 1 Senior Thesis Exhibition"
-    },
-    {
-      "title": "Recognition",
-      "text": "4 Prestigious Awards: Best in Show, 7th Annual Juried Art Show"
+      "text": "Willamette University - Salem, OR - BA Studio Art"
     }
   ],
-  "pageHeader": "About Amie Holstein"
+  "pageHeader": "About Amie"
 }
