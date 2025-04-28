@@ -86,11 +86,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     thumbnails.forEach(thumbnail => {
         thumbnail.addEventListener('click', function() {
-            // Update main image
             primaryImage.src = this.getAttribute('data-image');
             primaryImage.alt = this.querySelector('img').alt;
             
-            // Update active state
             thumbnails.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
         });
@@ -98,3 +96,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 {% endif %}
+
+<script src="/js/artwork-lightbox.js"></script>
