@@ -10,6 +10,7 @@ layout: layouts/project.njk
 artworks:
   - roe
   - five-empty-units
+  - still-life-1
 ---
 ## Artist Statement
 
