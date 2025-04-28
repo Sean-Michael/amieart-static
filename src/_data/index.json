@@ -1,9 +1,11 @@
 {
+  "shopText": "Handmade linocuts printed on fabric and stationary.",
+  "heroText": "Visual artist working in painting, printmaking, drawing, and textiles.",
   "heroHeading": "Amie Holstein",
-  "heroText": "Artistic Journey",
-  "workHeading": "Featured Collections",
-  "ctaHeading": "Let's kee",
-  "ctaText": "a",
+  "shopHeading": "Discover the Sshackk",
   "ctaButtonText": "a",
-  "ctaButtonLink": "a"
+  "workHeading": "Featured Artistic Journeys",
+  "ctaHeading": "Let's kee",
+  "ctaButtonLink": "a",
+  "ctaText": "a"
 }

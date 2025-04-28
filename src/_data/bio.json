@@ -1,72 +1,87 @@
 {
   "soloExhibitions": [
     {
+      "year": "2025",
+      "title": "Senior Art Thesis Exhibition",
+      "location": "Hallie Ford Museum of Art, Salem, Oregon"
+    },
+    {
+      "year": "2025",
+      "title": "8th Annual Juried Art Show",
+      "location": "Willamette University Gallery, Salem, Oregon"
+    },
+    {
       "year": "2024",
-      "title": "\"Ephemeral Landscapes\"",
-      "location": "Modern Gallery, San Francisco"
+      "title": "7th Annual Juried Art Show",
+      "location": "Willamette University Gallery, Salem, Oregon"
+    },
+    {
+      "year": "2023",
+      "title": "6th Annual Juried Art Show",
+      "location": "Willamette University Gallery, Salem, Oregon"
     },
     {
       "year": "2022",
-      "title": "\"Digital Nature\"",
-      "location": "Contemporary Arts Center, Boston"
-    },
-    {
-      "year": "2020",
-      "title": "\"Fragments\"",
-      "location": "Riverside Gallery, Chicago"
+      "title": "5th Annual Juried Art Show",
+      "location": "Willamette University Gallery, Salem, Oregon"
     }
   ],
   "education": [
     {
-      "year": "2018",
-      "title": "MFA in Fine Arts",
-      "institution": "School of Visual Arts, New York"
+      "year": "2025",
+      "title": "Bachelor of Arts in Studio Art",
+      "institution": "Willamette University, Salem, Oregon"
     },
     {
-      "year": "2015",
-      "title": "BFA in Studio Art",
-      "institution": "Rhode Island School of Design"
+      "year": "2025",
+      "title": "Minor in Business",
+      "institution": "Willamette University, Salem, Oregon"
     },
     {
-      "year": "2014",
-      "title": "Study Abroad Program",
-      "institution": "Florence University of the Arts, Italy"
+      "year": "2025",
+      "title": "Minor in Art History",
+      "institution": "Willamette University, Salem, Oregon"
     }
   ],
   "residenciesAwards": [
     {
+      "year": "2022",
+      "title": "Joseph T Albert Prize",
+      "location": "Willamette University"
+    },
+    {
       "year": "2023",
-      "title": "Artist Residency",
-      "location": "MacDowell Colony, New Hampshire"
+      "title": "Robert Hess Award",
+      "location": "Willamette University Art Department"
     },
     {
-      "year": "2021",
-      "title": "Emerging Artist Grant",
-      "location": "National Arts Foundation"
+      "year": "2024",
+      "title": "Jesse E. West Award",
+      "location": "Willamette University"
     },
     {
-      "year": "2019",
-      "title": "International Residency Program",
-      "location": "Berlin Arts Initiative, Germany"
+      "year": "2024",
+      "title": "Best in Show",
+      "location": "7th Annual Juried Art Show, Willamette University"
     }
   ],
-  "statement": "blah blah blah \n\nMy work investigates the shifting boundaries between the natural and artificial worlds. I am interested in how our increasingly digital existence transforms our relationship with organic forms and natural processes.\n\nThrough a combination of traditional and digital techniques, I create pieces that question the authenticity of our experience with nature in an age where such experiences are often mediated through screens and interfaces. I'm drawn to the ironies and contradictions that emerge when technology attempts to simulate or improve upon the natural world.\n\nBy juxtaposing organic materials with digital processes, my work invites viewers to reconsider their own connection to the physical environment and to reflect on what might be lost or gained as we increasingly inhabit virtual spaces. I seek to create moments of pause—spaces for contemplation about our place within both natural and constructed ecosystems.",
-  "bioTitle": "Contemporary Artist",
-  "bioContent": "Amie is a multidisciplinary artist based in Salem, Oregon, whose work explores themes of identity, memory, and the relationship between humans and nature in the modern world.\n\nWith a background in fine arts and environmental studies, her practice spans painting, sculpture, installation, and digital media. Her work has been exhibited in galleries and museums across North America and Europe, and she has participated in several prestigious artist residency programs.\n\nAmie's art is characterized by a thoughtful balance between conceptual depth and visual appeal, often incorporating elements from the natural world reinterpreted through a contemporary lens. Her recent series examines the impact of technology on our perception of nature and the ways in which digital interfaces mediate our experience of the physical world.",
+  "statement": "My work explores the intersection of traditional artistic practices and contemporary themes. Through various media including printmaking, painting, and installation, I investigate the relationships between artistic expression and community engagement.\n\nI am particularly interested in creating accessible art experiences that bridge diverse communities, as demonstrated by my work with Living Studios supporting artists with neurological and physical disabilities. My artistic practice combines technical skill with collaborative approaches, ensuring that art can be both personally expressive and socially impactful.\n\nBy balancing formal artistic training with real-world applications, my work invites viewers to consider the role of art in fostering connection and community. I strive to create pieces that are both visually compelling and conceptually meaningful, using my diverse skill set in set design, scenic painting, printmaking, and digital media to create multifaceted artistic experiences.",
+  "bioTitle": "Artist & Arts Facilitator",
+  "bioContent": "Amie Holstein is a multidisciplinary artist based in Salem, Oregon, whose work spans traditional and contemporary media. Currently completing her Bachelor of Arts in Studio Art with minors in Business and Art History at Willamette University, Amie maintains an impressive 3.87 GPA while actively contributing to the arts community.\n\nWith extensive experience as a Student Art Coordinator, Living Studios Intern, and Scenic Studio Supervisor, Amie has developed a diverse skill set that includes installation work, supporting artists with disabilities, and leading collaborative art projects. Her technical abilities encompass scenic painting, printmaking techniques including cyanotype and intaglio, welding, woodworking, and digital design.\n\nAmie's artistic practice is complemented by her commitment to accessibility and inclusion in creative spaces. Her work has been recognized with multiple prestigious awards including the Joseph T Albert Prize, Robert Hess Award, and Jesse E. West Award. Her exhibitions include the upcoming Senior Art Thesis Exhibition at the Hallie Ford Museum of Art and multiple appearances in juried shows, including winning Best in Show at the 7th Annual Juried Art Show.",
   "bioImage": "/images/uploads/r1-01260-0026.jpg",
   "bioStats": [
     {
       "title": "Education",
-      "text": "B.A. Studio Art"
+      "text": "B.A. Studio Art, Willamette University"
     },
     {
       "title": "Exhibitions",
-      "text": "25+ Group Shows<br>8 Solo Exhibitions"
+      "text": "4 Juried Shows, 1 Senior Thesis Exhibition"
     },
     {
       "title": "Recognition",
-      "text": "3 Arts Council Grants<br>2 Residency Fellowships"
+      "text": "4 Prestigious Awards: Best in Show, 7th Annual Juried Art Show"
     }
   ],
-  "pageHeader": "About Amie"
+  "pageHeader": "About Amie Holstein"
 }

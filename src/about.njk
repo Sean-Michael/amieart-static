@@ -14,7 +14,7 @@ title: {{ bio.pageHeader }}
         </div>
         <div class="bio-content">
             <h2>{{ bio.bioTitle }}</h2>
-            <p>{{ bio.description }}</p>
+            <p>{{ bio.bioContent }}</p>
             <div class="bio-stats">
                 {% for stat in bio.bioStats %}
                 <div class="stat-item">
@@ -40,7 +40,7 @@ title: {{ bio.pageHeader }}
                 {% endfor %}
             </div>
             <div class="history-column">
-                <h3>Solo Exhibitions</h3>
+                <h3>Exhibitions</h3>
                 {% for solo in bio.soloExhibitions %}
                 <div class="history-item">
                     <p class="year">{{ solo.year }}</p>

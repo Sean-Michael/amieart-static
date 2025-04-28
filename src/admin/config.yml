@@ -108,10 +108,9 @@ collections:
           - { label: "Hero Heading", name: "heroHeading", widget: "string", default: "Amie Holstein" }
           - { label: "Hero Text", name: "heroText", widget: "string", default: "Artistic Journey" }
           - { label: "Work Heading", name: "workHeading", widget: "string", default: "Featured Projects" }
-          - { label: "CTA Heading", name: "ctaHeading", widget: "string", default: "Interested in collaborating?" }
-          - { label: "CTA Text", name: "ctaText", widget: "text", default: "I'm always open to new projects and opportunities to collaborate with other artists, galleries, and art enthusiasts." }
-          - { label: "CTA Button Text", name: "ctaButtonText", widget: "string", default: "Get in Touch" }
-          - { label: "CTA Button Link", name: "ctaButtonLink", widget: "string", default: "/contact/" }
+          - { label: "Shop Heading", name: "shopHeading", widget: "string", default: "Discover the Sshackk" }
+          - { label: "Shop Text", name: "shopText", widget: "text", default: "Handmade linocuts printed on fabric and stationary." }
+
       # Projects Page
       - file: "src/_data/projects.json"
         label: "Projects Page"
@@ -136,30 +135,6 @@ collections:
           - { label: "Highlight Image", name: "highlightImage", widget: "image", default: "/api/placeholder/600/400" }
           - { label: "Highlight Button Text", name: "highlightButtonText", widget: "string", default: "Visit The Sshackk on Etsy" }
           - { label: "Highlight Button Link", name: "highlightButtonLink", widget: "string", default: "https://www.etsy.com/shop/Thesshackk" }
-
-      # Resume Page
-      - file: "src/_data/resume.json"
-        label: "Resume Page"
-        name: "resume"
-        editor:
-          preview: true
-        fields:
-          - { label: "Hero Heading", name: "heroHeading", widget: "string", default: "Resume" }
-          - { label: "Hero Text", name: "heroText", widget: "string", default: "Professional experience & education" }
-          - label: "Sections"
-            name: "sections"
-            widget: "list"
-            fields:
-              - { label: "Section Title", name: "title", widget: "string" }
-              - label: "Items"
-                name: "items"
-                widget: "list"
-                fields:
-                  - { label: "Heading", name: "heading", widget: "string" }
-                  - { label: "Meta", name: "meta", widget: "string" }
-                  - { label: "Description", name: "description", widget: "text" }
-          - { label: "CTA Button Text", name: "ctaButtonText", widget: "string", default: "Download Full CV (PDF)" }
-          - { label: "Resume PDF", name: "resumePdf", widget: "file", required: false, media_folder: "../files", public_forlder: "/files" }
 
       # Contact Page
       - file: "src/_data/contact.json"
