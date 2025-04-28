@@ -16,7 +16,7 @@ title: {{ bio.pageHeader }}
         </div>
         <div class="bio-content">
             <h2>{{ bio.bioTitle }}</h2>
-            <p>{{ bio.bioContent }}</p>
+            <div>{{ bio.bioContent | markdown | safe }}</div>
             <div class="bio-stats">
                 {% for stat in bio.bioStats %}
                 <div class="stat-item">
@@ -66,6 +66,6 @@ title: {{ bio.pageHeader }}
     
     <section class="statement-section">
         <h2>Artist Statement</h2>
-        <p>{{ bio.statement }}</p>
+        <div>{{ bio.statement | markdown | safe }}</div>
     </section>
 </div>
