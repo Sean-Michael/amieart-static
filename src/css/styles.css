@@ -2002,3 +2002,54 @@
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
   }
+
+
+.bio-image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .bio-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    margin-bottom: 60px;
+    align-items: flex-start; 
+  }
+  
+  .bio-section .bio-image {
+    position: relative;
+    max-width: 100%;
+  }
+  
+  .bio-section .bio-image img {
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px var(--card-shadow);
+  }
+
+  .bio-section .bio-image::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: -15px;
+    width: 70%;
+    height: 70%;
+    border: 3px solid var(--accent-color);
+    border-radius: 4px;
+    z-index: -1;
+    opacity: 0.4;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .bio-section {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    .bio-image-container {
+      max-width: 80%;
+      margin: 0 auto;
+    }
+  }
