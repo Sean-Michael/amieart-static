@@ -12,4 +12,6 @@ layout: layouts/project.njk
 artworks:
   - the-four-million-year-old-woman
   - five-empty-units
+  - anatomy-lab-girls
+  - 1-16-1
 ---
